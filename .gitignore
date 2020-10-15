@@ -1,0 +1,24 @@
+.idea
+.vscode
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+docker-compose.override.yml
+
+# dist
+env/
+venv/
+.Python
+build/
+dist/
+sdist/
+lib/
+lib64/
+*.egg
+*.egg-info
+
+.DS_Store
+redis.conf
+redis-data
