@@ -1,0 +1,25 @@
+version: '2.4'
+services:
+  redis:
+    image: "redis:alpine"
+    command: redis-server --requirepass redis --port 6379
+    ports:
+      - "6379:6379"
+    volumes:
+      - $PWD/redis-data:/var/lib/redis
+      - $PWD/redis.conf:/usr/local/etc/redis/redis.conf
+    environment:
+      - REDIS_REPLICATION_MODE=master
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli -u redis://redis@localhost:6379/1 ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  task:
+    build: .
+    volumes:
+      - .:/app/avtocod-test-task
+    depends_on:
+      redis:
+        condition: service_healthy
