@@ -33,3 +33,6 @@ restart:
 
 load:
 	docker-compose run --rm task python /app/avtocod-test-task/app.py --command load --depth ${DEPTH} --root ${ROOT}
+
+get:
+	docker-compose run --rm task python /app/avtocod-test-task/app.py --command get --number ${NUMBER} --root ${ROOT}
