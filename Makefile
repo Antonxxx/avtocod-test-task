@@ -6,10 +6,6 @@ build:
 	docker-compose -p ${PROJECT} build
 
 
-test:
-	docker-compose -p ${PROJECT} run --rm -e POSTGRES_DBNAME=stockbalance_test backend \
-		py.test -vv --disable-warnings ${path}
-
 up:
 	docker-compose -p ${PROJECT} up -d
 
