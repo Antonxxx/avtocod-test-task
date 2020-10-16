@@ -20,4 +20,9 @@ make build
 ```bash
 make load DEPTH=0 ROOT=https://ria.ru
 ```
+## GET
+
+```bash
+make get NUMBER=0 ROOT=https://ria.ru
+```
 

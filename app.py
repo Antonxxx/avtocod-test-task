@@ -90,7 +90,7 @@ if __name__ == "__main__":
     parser.add_argument("--depth", dest="depth", type=int, help='Specify a depth from 0 to 2 default 0', default=0, )
     parser.add_argument("--command", dest="command", type=str, help='enter command Enum[load, GET]')
     parser.add_argument("--root", dest="root", type=str, help='Enter the root link')
-    parser.add_argument("--number", dest="number", type=int, help='Number of results', default=0)
+    parser.add_argument("--number", dest="number", type=int, help='Number of results', default=1)
 
     args = parser.parse_args()
     start_time = time.monotonic()
